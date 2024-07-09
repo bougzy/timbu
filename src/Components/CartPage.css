@@ -1,0 +1,57 @@
+
+
+
+.discount {
+    width: 100%; 
+  }
+  
+ 
+  @media (max-width: 767px) {
+    .discount {
+      font-size: 0.8rem;
+    }
+    
+    .text-md-center {
+      text-align: center;
+    }
+  
+    .mt-4 {
+      margin-top: 1rem !important;
+    }
+  
+    .mb-4 {
+      margin-bottom: 1rem !important;
+    }
+  
+    .my-4 {
+      margin: 1rem 0 !important;
+    }
+    
+    .alert {
+      padding: 1rem;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (min-width: 768px) {
+    .discount {
+      font-size: 1rem;
+    }
+  
+    .text-md-center {
+      text-align: center;
+    }
+  
+    .mt-4 {
+      margin-top: 2rem !important;
+    }
+  
+    .mb-4 {
+      margin-bottom: 2rem !important;
+    }
+  
+    .my-4 {
+      margin: 2rem 0 !important;
+    }
+  }
+  

@@ -1,0 +1,38 @@
+.cart-item {
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+  }
+  
+  .cart-item h2 {
+    margin: 0;
+  }
+  
+  .cart-item button {
+    margin: 0.5rem;
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cart-item button:hover {
+    background-color: #0056b3;
+  }
+  
+  .order-summary {
+    margin-top: 2rem;
+  }
+  
+  .order-summary button {
+    padding: 0.5rem 1rem;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .order-summary button:hover {
+    background-color: #218838;
+  }
+  

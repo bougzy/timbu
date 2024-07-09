@@ -1,0 +1,35 @@
+.navbar-custom {
+  display: flex;
+  justify-content: space-around;
+
+  background-color: #fff;
+  color: black;
+  padding: 20px 0px;
+  width: 100%;
+  margin: 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  margin-bottom: 20px;
+}
+
+
+.navbar-right {
+  display: flex;
+
+ 
+}
+
+.cart-link {
+  display: flex;
+  align-items: center;
+  color: black;
+  text-decoration: none;
+  font-size: 16px;
+}
+
+.cart-icon {
+  margin-right: 5px; 
+}
+
+

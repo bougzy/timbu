@@ -1,0 +1,67 @@
+.promotion-banner {
+    background-color: #f8f9fa;
+    padding: 2rem 1rem;
+  }
+  
+  .promotion-text {
+    margin-bottom: 1rem; 
+    
+  }
+  
+  .promotion-text h1 {
+    font-size: 64px;
+    font-weight: bold;
+  }
+  
+  
+  
+  .promotion-text p {
+    font-size: 2.2rem;
+    margin: 0.5rem 0;
+  }
+  
+  .badge-container {
+    margin-top: 0.5rem; 
+  }
+  
+  .badge {
+    display: inline-block;
+    background-color: #e0e0e0;
+    color: #000;
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+  }
+  
+  .slanted-text {
+    display: inline-block;
+  }
+  
+  .highlight {
+    display: inline-block;
+    transform: skew(6deg, -4deg);
+    background-color: #DF1406; 
+    color: white; 
+    border-radius: 10px; 
+    margin-left: -10px;
+    font-size: 51px;
+    padding: 10px;
+    
+  }
+
+
+  .grab{
+    position: relative;
+    z-index: 1;
+  }
+
+
+  @media (max-width: 768px) {
+    .promotion-text h1 {
+      font-size: 55px; 
+      font-weight: bold;
+    }
+  }
+
+  
