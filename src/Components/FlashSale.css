@@ -1,0 +1,17 @@
+.image-container {
+    position: relative;
+    width: 280px;
+    height: 220px;
+  }
+  
+  .off-image {
+    position: absolute;
+    top: -30px; 
+    right: 0;
+    z-index: 1;
+  }
+  
+  .iphone14-image, .flip3-image, .flip5-image {
+    z-index: 0;
+  }
+  

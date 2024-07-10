@@ -10,8 +10,11 @@ import iphone12pro from '../assets/iphone12pro.png';
 import iphone13series from '../assets/iphone13series.png';
 import ipadmini6 from '../assets/ipadmini6.png';
 import iphone14 from '../assets/iphone14.png';
+import iphone8plus from '../assets/iphone8plus.png';
+import samsunggalaxytab from '../assets/samsunggalaxytab.png';
 import love from '../assets/love.png';
 import './ProductsList.css';
+import FlashSale from './FlashSale';
 
 const items = [
   { id: 1, name: 'iPhone 14 Plus', price: '$225.00', image: iphone14, rating: 5, className: 'iphone14-image', description: 'Experience the very best and latest technology with iPhone 14 Plus.' },
@@ -20,14 +23,16 @@ const items = [
   { id: 4, name: 'iPad Mini 6', price: '$225.00', image: ipadmini6, rating: 5, className: 'ipadmini6-image', description: 'Portable power: iPad Mini 6 is perfect for on-the-go use.' },
   { id: 5, name: 'iPhone 12 Pro', price: '$225.00', image: iphone12pro, rating: 5, className: 'iphone12pro-image', description: 'Capture every moment with iPhone 12 Pro’s advanced camera.' },
   { id: 6, name: 'iPhone XR', price: '$225.00', image: iphonexr, rating: 5, className: 'iphonexr-image', description: 'iPhone XR combines performance and style at a great price.' },
+  { id: 9, name: 'iphone 8 Plus', price: '$225.00', image: iphone8plus, rating: 5, className: 'flipp5-image', description: 'The future of smartphones is here with Samsung Galaxy Flip 5.' },
   { id: 8, name: 'iPhone 13 Series', price: '$225.00', image: iphone13series, rating: 5, className: 'iphone13series-image', description: 'Discover the power and performance of the iPhone 13 Series.' },
-  { id: 9, name: 'Samsung Galaxy Flip 5', price: '$225.00', image: Samsungflip5, rating: 5, className: 'flipp5-image', description: 'The future of smartphones is here with Samsung Galaxy Flip 5.' },
+  { id: 9, name: 'Samsung Galaxy Tab 8s', price: '$225.00', image: samsunggalaxytab, rating: 5, className: 'flipp5-image', description: 'The future of smartphones is here with Samsung.' },
 ];
 
 const ProductList = () => {
   const dispatch = useDispatch();
 
   return (
+    <> 
     <Container className="mt-5">
       <Row>
         {items.map((item) => (
@@ -68,6 +73,8 @@ const ProductList = () => {
         ))}
       </Row>
     </Container>
+    <FlashSale />
+    </>
   );
 };
 
