@@ -4,8 +4,9 @@ import { useSelector } from 'react-redux';
 import plus from "../assets/plus.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import "./Checkout.css"
 
-const CheckoutPage = () => {
+const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0);
   const [paymentMethod, setPaymentMethod] = useState('visa');
@@ -21,10 +22,10 @@ const CheckoutPage = () => {
   return (
     
     <Container className="mt-5">
-       <h2 ><Link to="/" className="text-dark text-decoration-none">Cart</Link> &gt;Checkout</h2>
+      <h2 ><Link to="/" className="text-dark text-decoration-none fw-bolder"><span className="h4" style={{color:"#A2A3B1" }} >Cart  &gt; </span></Link>  <span className="fw-bolder">Checkout</span></h2>
+       {/* <h2 ><Link to="/" className="text-dark text-decoration-none">Cart</Link> &gt;Checkout</h2> */}
       <Row className="my-4">
         <Col md={8}>
-          <h2>Checkout</h2>
           <div className="payment-method my-4">
             <h4>Payment Method</h4>
             <ListGroup className="border border-dark p-4">
@@ -62,7 +63,7 @@ const CheckoutPage = () => {
             <p>Add Payment method</p>
           </div>
         </Col>
-        <Col xs={12} md={4} className="border border-dark p-5 rounded">
+        <Col xs={12} md={4} className="border border-dark p-4  rounded">
           <h3>Order Summary</h3>
           <div className="d-flex justify-content-between">
             <p>Price</p>
@@ -103,4 +104,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default Checkout;

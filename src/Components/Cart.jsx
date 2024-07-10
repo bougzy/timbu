@@ -5,17 +5,18 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, increaseQuantity, decreaseQuantity } from '../feature/cart/cartSlice';
 import OrderSummary from './OrderSummary';
+
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const dispatch = useDispatch();
 
   return (
     <Container>
-      <h2 ><Link to="/" className="text-dark text-decoration-none">Shopping</Link> &gt;Cart</h2>
+      <h2 ><Link to="/" className="text-dark text-decoration-none fw-bolder"><span className="h4" style={{color:"#A2A3B1" }} >Shopping  &gt; </span></Link>  <span className="fw-bolder">Cart</span></h2>
       <Row>
         
         <Col md={8}>
-          <h4 className="text-muted">{cartItems.length} Item{cartItems.length !== 1 && 's'}</h4>
+          <h4 className="" style={{color:"#A2A3B1" }}>{cartItems.length} Item{cartItems.length !== 1 && 's'}</h4>
           <ListGroup variant="flush">
             {cartItems.map((item) => (
               <ListGroup.Item key={item.id} className="">
@@ -50,7 +51,7 @@ const Cart = () => {
         </Col>
         
         <Col md={4}>
-          <Card className="border border-dark">
+          <Card className="border border-dark mt-4">
             <Card.Body>
               <OrderSummary />
             </Card.Body>

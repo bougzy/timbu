@@ -6,7 +6,7 @@ import LOGO from "../../assets/LOGO.png"
 const Footer = () => {
   return (
     <footer className="bg-white text-dark py-4">
-      <Container className="mt-5">
+      <Container className="" style={{marginTop:"200px"}}>
         <Row>
           <Col md={6} className="mb-4 mb-md-0">
             <Image src={LOGO} className="mb-4" style={{marginTop:"-15px"}}/>
