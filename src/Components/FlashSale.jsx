@@ -10,7 +10,7 @@ import off from '../assets/off.png';
 import './FlashSale.css';
 
 const items = [
-  { id: 1, name: 'iPad Min 6', price: '$225.00', image: ipadmini6, rating: 5, className: 'iphone14-image', description: 'Experience the very best and latest technology with iPhone 14 Plus.' },
+  { id: 1, name: 'iPad Min 6', price: '$225.00', image: ipadmini6, rating: 5, className: 'iphone14-image', description: 'Experience the very best and latest technology.' },
   { id: 2, name: 'ipad Mini 1 Air', price: '$225.00', image: ipadm1air, rating: 5, className: 'flip3-image', description: 'Innovative design meets cutting-edge performance.' },
   { id: 3, name: 'ipad Mini 10 Gen', price: '$225.00', image: ipadmini10gen, rating: 5, className: 'flip5-image', description: 'The future of smartphones is here with Samsung.' },
 ];
