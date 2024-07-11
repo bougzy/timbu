@@ -1,16 +1,14 @@
-
-
-
-
 import React, { useState } from 'react';
 import { Container, Image, Row, Col, Button, Card, Form, ListGroup } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import plus from "../assets/plus.png";
+import visa from "../assets/visa.png"; 
+import mastercard from "../assets/mastercard.svg"; 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 import OrderSummaryCheckout from './OrderSummaryCheckout';
-import "./Checkout.css"
-import percent from "../assets/percent.png"
+import "./Checkout.css";
+
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -38,35 +36,41 @@ const Checkout = () => {
           <div className="payment-method my-4">
             <h4>Payment Method</h4>
             <ListGroup className="border border-dark p-4">
-              <ListGroup.Item className="d-flex justify-content-between align-items-center flex-wrap">
+              <ListGroup.Item className="d-flex justify-content-start align-items-center flex-wrap border-0">
                 <Form.Check
                   type="radio"
                   id="visa"
                   name="paymentMethod"
                   value="visa"
-                  label="Visa **** 6754"
                   checked={paymentMethod === 'visa'}
                   onChange={handlePaymentMethodChange}
                 />
-                <span className="ml-auto">Expires 06/2021</span>
-                <Button variant="link" className="text-danger">Remove</Button>
+                <Image src={visa} alt="Visa" className="ms-3" style={{ height: "30px" }} />
+                <span className="ms-3">**** 6754</span>
+                <span className="ms-auto text-center" style={{ flex: "1 0 auto" }}>Expires 06/2025</span>
+                <Button variant="link" className="ms-auto text-danger text-underline-none" style={{ textDecoration: 'none' }}>Remove</Button>
               </ListGroup.Item>
-              <ListGroup.Item className="d-flex justify-content-between align-items-center flex-wrap">
-                <Form.Check
-                  type="radio"
-                  id="mastercard"
-                  name="paymentMethod"
-                  value="mastercard"
-                  label="Mastercard **** 5643"
-                  checked={paymentMethod === 'mastercard'}
-                  onChange={handlePaymentMethodChange}
-                />
-                <span className="ml-auto">Expires 11/2025</span>
-                <Button variant="link" className="text-danger">Remove</Button>
-              </ListGroup.Item>
+
+              <hr className="w-100 border-dark my-2"></hr>
+              
+                <ListGroup.Item className="d-flex justify-content-start align-items-center flex-wrap border-0">
+                  <Form.Check
+                    type="radio"
+                    id="mastercard"
+                    name="paymentMethod"
+                    value="mastercard"
+                    checked={paymentMethod === 'mastercard'}
+                    onChange={handlePaymentMethodChange}
+                  />
+                  <Image src={mastercard} alt="MasterCard" className="ms-3" style={{ height: "30px" }} />
+                  <span className="ms-3">**** 5643</span>
+                  <span className="ms-auto text-center" style={{ flex: "1 0 auto" }}>Expires 11/2025</span>
+                  <Button variant="link" className="ms-auto text-danger" style={{ textDecoration: 'none' }}>Remove</Button>
+                </ListGroup.Item>
+
             </ListGroup>
           </div>
-          <hr className="" style={{ borderTop: "5px solid #000" }}></hr>
+          <hr className="border border-dark "></hr>
           <div className="d-flex">
             <Image src={plus} style={{ height: "200%" }} />
             <p>Add Payment method</p>

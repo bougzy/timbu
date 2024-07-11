@@ -20,7 +20,7 @@ const FlashSale = () => {
 
   return (
     <Container className="mt-5">
-      <h1 className="my-4" style={{fontSize:"60px", fontFamily:"Prompt"}}>Flash sale for <span style={{color:"#DF1406"}}>best</span> sellers</h1>
+      <h1 className="my-4 fw-bolder" style={{fontSize:"50px", fontFamily:"Prompt"}}>Flash sale for <span style={{color:"#DF1406", fontSize:""}}>best</span> sellers</h1>
       <Row>
         {items.map((item) => (
           <Col key={item.id} xs={12} sm={6} md={4} className="mb-4">
