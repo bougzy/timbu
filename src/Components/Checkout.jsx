@@ -1,10 +1,16 @@
+
+
+
+
 import React, { useState } from 'react';
-import { Container, Image, Row, Col, Button, Form, ListGroup } from 'react-bootstrap';
+import { Container, Image, Row, Col, Button, Card, Form, ListGroup } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import plus from "../assets/plus.png";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
+import OrderSummaryCheckout from './OrderSummaryCheckout';
 import "./Checkout.css"
+import percent from "../assets/percent.png"
 
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -20,10 +26,13 @@ const Checkout = () => {
   };
 
   return (
-    
     <Container className="mt-5">
-      <h2 ><Link to="/" className="text-dark text-decoration-none fw-bolder"><span className="h4" style={{color:"#A2A3B1" }} >Cart  &gt; </span></Link>  <span className="fw-bolder">Checkout</span></h2>
-       {/* <h2 ><Link to="/" className="text-dark text-decoration-none">Cart</Link> &gt;Checkout</h2> */}
+      <h2>
+        <Link to="/cart" className="text-dark text-decoration-none fw-bolder">
+          <span className="h4" style={{ color: "#A2A3B1" }}>Cart &gt; </span>
+        </Link>
+        <span className="fw-bolder">Checkout</span>
+      </h2>
       <Row className="my-4">
         <Col md={8}>
           <div className="payment-method my-4">
@@ -64,44 +73,13 @@ const Checkout = () => {
           </div>
         </Col>
 
-        <div>
-        <Col xs={12} md={4} className="border border-dark p-4 rounded">
-          <h3>Order Summary</h3>
-          <div className="d-flex justify-content-between">
-            <p>Price</p>
-            <p>${totalAmount.toFixed(2)}</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p>Discount</p>
-            <p>$0.00</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p>Shipping</p>
-            <p className="text-danger">Free</p>
-          </div>
-          <div className="d-flex justify-content-between">
-            <p>Coupon Applied</p>
-            <p>$0.00</p>
-          </div>
-          <hr />
-          <div className="d-flex justify-content-between">
-            <h4>TOTAL</h4>
-            <h4>${totalAmount.toFixed(2)}</h4>
-          </div>
-          <div className="d-flex justify-content-between estimated">
-            <p>Estimated Delivery by</p>
-            <h6>25 July, 2024</h6>
-          </div>
-          <Form.Group>
-            <Form.Control type="text" placeholder="Coupon Code" />
-          </Form.Group>
-          <div className="text-center">
-            <Button variant="danger" className="mt-2 p-2 rounded-4" style={{ width: "100%" }} onClick={handleConfirmOrder}>
-              Proceed to Checkout
-            </Button>
-          </div>
+        <Col md={4}>
+          <Card className="border border-dark mt-4">
+            <Card.Body>
+              <OrderSummaryCheckout />
+            </Card.Body>
+          </Card>
         </Col>
-        </div>
       </Row>
     </Container>
   );

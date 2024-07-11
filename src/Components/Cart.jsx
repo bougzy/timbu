@@ -5,6 +5,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useSelector, useDispatch } from 'react-redux';
 import { removeItem, increaseQuantity, decreaseQuantity } from '../feature/cart/cartSlice';
 import OrderSummary from './OrderSummary';
+import percent from "../assets/percent.png"
+
 
 const Cart = () => {
   const cartItems = useSelector((state) => state.cart.items);
@@ -22,7 +24,7 @@ const Cart = () => {
               <ListGroup.Item key={item.id} className="">
                 <Row>
                   <Col sm={12} md={8}>
-                    <Image src={item.image} rounded style={{ width: '150px' }} />
+                    <Image src={item.image} rounded style={{ width: '310px' }} className="border border-0 shadow p-3"/>
                   </Col>
                   <Col sm={12} md={4}>
                
@@ -48,6 +50,9 @@ const Cart = () => {
               </ListGroup.Item>
             ))}
           </ListGroup>
+          <div className="p-4  text-dark d-none d-md-block border border-danger rounded" style={{background:"#FFD3B6", marginTop:"85px", borderRadius:"5px solid #DF1406", width:"650px", fontFamily:"Montserrat"}}>
+            <img src={percent} /> <span className="ms-2" style={{fontFamily:"Montserrat"}} > Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA</span>
+          </div>
         </Col>
         
         <Col md={4}>
@@ -56,8 +61,9 @@ const Cart = () => {
               <OrderSummary />
             </Card.Body>
           </Card>
-          <div className="mt-3 p-3 bg-danger text-white text-center">
-            10% Instant Discount with Federal Bank Debit Cards on a min spend of $150. TCA
+          <div className="mt-3 p-3 text-dark  d-flex rounded d-sm-block d-md-none" style={{background:"#FFD3B6", borderRadius:"5px solid #DF1406", width:"350px", fontFamily:"Montserrat"}}>
+            <img src={percent} className="mt-2" style={{width:"30px", height:"30px"}}/>
+            <p className="ms-2 mt-2 text-dark text-sm">10% Instant Discount with Federal<br/> Bank Debit Cards on a min spend of<br/> $150. TCA</p>
           </div>
         </Col>
       </Row>

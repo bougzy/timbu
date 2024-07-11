@@ -7,6 +7,7 @@ import fireleft from "../../assets/fireleft.png"
 // import arrowright from "../../assets/arrowright.png"
 import fireright from "../../assets/fireright.png"
 
+
 const TwoColumnGrid = () => {
   return (
     <Container className="arrival" style={{marginTop:"200px"}}>
