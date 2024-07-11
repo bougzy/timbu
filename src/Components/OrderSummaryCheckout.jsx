@@ -66,7 +66,7 @@ const OrderSummaryCheckout = () => {
         <Modal.Body>
           <Form className="p-3">
             <Form.Group controlId="paymentMethod">
-              <Form.Label>Payment Method</Form.Label>
+              <Form.Label>Card Number</Form.Label>
               <Form.Control type="text" placeholder="123 456 789" >
                 
               </Form.Control>
