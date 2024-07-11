@@ -27,9 +27,9 @@ const IconGrid = () => {
   return (
     <div>
         <Hero />
-      <Container className="mt-5">
+      <Container className="" style={{marginTop:"250px"}}>
         <div className="mt-4">
-                  <h1 className="my-4 text-center text-md-left" style={{ fontSize: "80px", fontFamily: "Prompt" }}>
+                  <h1 className="my-4 fw-bolder text-center text-md-left" style={{ fontSize: "80px", fontFamily: "Prompt" }}>
             What <span style={{ color: "#DF1406" }}>we</span> provide
           </h1>
           <Row className="text-center">
