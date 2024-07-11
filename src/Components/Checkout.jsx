@@ -63,7 +63,9 @@ const Checkout = () => {
             <p>Add Payment method</p>
           </div>
         </Col>
-        <Col xs={12} md={4} className="border border-dark p-4  rounded">
+
+        <div>
+        <Col xs={12} md={4} className="border border-dark p-4 rounded">
           <h3>Order Summary</h3>
           <div className="d-flex justify-content-between">
             <p>Price</p>
@@ -99,6 +101,7 @@ const Checkout = () => {
             </Button>
           </div>
         </Col>
+        </div>
       </Row>
     </Container>
   );

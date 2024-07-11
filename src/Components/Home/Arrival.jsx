@@ -12,7 +12,7 @@ const TwoColumnGrid = () => {
     <Container className="arrival">
       <Row>
         <Col>
-        <h1 className="my-4" style={{fontSize:"60px", fontFamily:"Prompt"}}>New <span style={{color:"#DF1406"}}>arrival</span> for you</h1>
+        <h1 className="my-4" style={{fontSize:"60px", fontFamily:"Prompt"}}>New <span style={{color:"#DF1406", fontSize:""}}>arrival</span> for you</h1>
         </Col>
         <Col className="d-flex justify-content-end align-items-center me-1">
           <div className="circle-icon">
