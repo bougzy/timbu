@@ -1,5 +1,7 @@
+
+
 import React, { useState } from 'react';
-import { Container, Image, Row, Col, Button, Card, Form, ListGroup } from 'react-bootstrap';
+import { Container, Image, Row, Col, Button, Card, Form, ListGroup, Modal } from 'react-bootstrap';
 import { useSelector } from 'react-redux';
 import plus from "../assets/plus.png";
 import visa from "../assets/visa.png"; 
@@ -9,11 +11,11 @@ import { Link } from 'react-router-dom';
 import OrderSummaryCheckout from './OrderSummaryCheckout';
 import "./Checkout.css";
 
-
 const Checkout = () => {
   const cartItems = useSelector((state) => state.cart.items);
   const totalAmount = cartItems.reduce((total, item) => total + parseFloat(item.price.slice(1)) * item.quantity, 0);
   const [paymentMethod, setPaymentMethod] = useState('visa');
+  const [showModal, setShowModal] = useState(false);
 
   const handlePaymentMethodChange = (e) => {
     setPaymentMethod(e.target.value);
@@ -22,6 +24,9 @@ const Checkout = () => {
   const handleConfirmOrder = () => {
     alert('Your order has been confirmed. You can proceed to payment.');
   };
+
+  const handleOpenModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
 
   return (
     <Container className="mt-5">
@@ -53,27 +58,26 @@ const Checkout = () => {
 
               <hr className="w-100 border-dark my-2"></hr>
               
-                <ListGroup.Item className="d-flex justify-content-start align-items-center flex-wrap border-0">
-                  <Form.Check
-                    type="radio"
-                    id="mastercard"
-                    name="paymentMethod"
-                    value="mastercard"
-                    checked={paymentMethod === 'mastercard'}
-                    onChange={handlePaymentMethodChange}
-                  />
-                  <Image src={mastercard} alt="MasterCard" className="ms-3" style={{ height: "30px" }} />
-                  <span className="ms-3">**** 5643</span>
-                  <span className="ms-auto text-center" style={{ flex: "1 0 auto" }}>Expires 11/2025</span>
-                  <Button variant="link" className="ms-auto text-danger" style={{ textDecoration: 'none' }}>Remove</Button>
-                </ListGroup.Item>
-
+              <ListGroup.Item className="d-flex justify-content-start align-items-center flex-wrap border-0">
+                <Form.Check
+                  type="radio"
+                  id="mastercard"
+                  name="paymentMethod"
+                  value="mastercard"
+                  checked={paymentMethod === 'mastercard'}
+                  onChange={handlePaymentMethodChange}
+                />
+                <Image src={mastercard} alt="MasterCard" className="ms-3" style={{ height: "30px" }} />
+                <span className="ms-3">**** 5643</span>
+                <span className="ms-auto text-center" style={{ flex: "1 0 auto" }}>Expires 11/2025</span>
+                <Button variant="link" className="ms-auto text-danger" style={{ textDecoration: 'none' }}>Remove</Button>
+              </ListGroup.Item>
             </ListGroup>
           </div>
           <hr className="border border-dark "></hr>
-          <div className="d-flex">
-            <Image src={plus} style={{ height: "200%" }} />
-            <p>Add Payment method</p>
+          <div className="d-flex" onClick={handleOpenModal} style={{ cursor: 'pointer' }}>
+            <Image src={plus} style={{ height: "30px" }} />
+            <p className="ms-2">Add Payment method</p>
           </div>
         </Col>
 
@@ -85,8 +89,45 @@ const Checkout = () => {
           </Card>
         </Col>
       </Row>
+     <Modal show={showModal} onHide={handleCloseModal}>
+        <Modal.Header closeButton>
+        </Modal.Header>
+        <Modal.Body>
+          <h4>Add Payment Method</h4>
+          <Form className="p-3">
+            <Form.Group controlId="paymentMethod">
+              <Form.Label>Card Number</Form.Label>
+              <Form.Control type="text" placeholder="123 456 789" >
+                
+              </Form.Control>
+            </Form.Group>
+            
+            <div className="d-flex"> 
+            <Form.Group controlId="cardExpiry" className="mt-3 mx-1 w-50">
+              <Form.Label>Expiry Date</Form.Label>
+              <Form.Control type="text" placeholder="MM/YY" />
+            </Form.Group>
+            <Form.Group controlId="cardCVC" className="mt-3 mx-1 w-50">
+              <Form.Label>CVV</Form.Label>
+              <Form.Control type="text" placeholder="CVv" />
+            </Form.Group>
+            </div>
+          </Form>
+        </Modal.Body>
+        
+          <Button variant="primary mx-auto" className="mb-4 bg-danger border-0 p-3 w-75">
+            Save Card Details
+          </Button>
+          <div className="p-3 mx-4">
+          <p className="text-muted">
+          Your personal data will be used to process your order, support your experience throughout this website, and for other purposes.
+          </p>
+          </div>
+      </Modal>
+
     </Container>
   );
 };
 
 export default Checkout;
+

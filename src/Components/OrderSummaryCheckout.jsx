@@ -1,8 +1,10 @@
 
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { Button, ListGroup, Form, Image, Modal } from 'react-bootstrap';
 import tee from '../assets/tee.png';
+import order from '../assets/order.png';
 import './OrderSummary.css';
 
 const OrderSummaryCheckout = () => {
@@ -61,35 +63,21 @@ const OrderSummaryCheckout = () => {
       
       <Modal show={showModal} onHide={handleCloseModal}>
         <Modal.Header closeButton>
-          <Modal.Title >Add Payment Method</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <Form className="p-3">
-            <Form.Group controlId="paymentMethod">
-              <Form.Label>Card Number</Form.Label>
-              <Form.Control type="text" placeholder="123 456 789" >
-                
-              </Form.Control>
-            </Form.Group>
-            
-            <div className="d-flex"> 
-            <Form.Group controlId="cardExpiry" className="mt-3 mx-1 w-50">
-              <Form.Label>Expiry Date</Form.Label>
-              <Form.Control type="text" placeholder="MM/YY" />
-            </Form.Group>
-            <Form.Group controlId="cardCVC" className="mt-3 mx-1 w-50">
-              <Form.Label>CVV</Form.Label>
-              <Form.Control type="text" placeholder="CVC" />
-            </Form.Group>
-            </div>
-          </Form>
+          <div className="text-center">
+          <img src={order} />
+          </div>
         </Modal.Body>
-        
-          <Button variant="primary mx-auto" className="mb-4 bg-danger border-0 p-3 w-75">
-            Proceed to Payment
-          </Button>
+        <h4 className="text-center mt-3">Your Order is confirmed!</h4>
+          <p className="text-center">We’ll send you a shipping confirmation email as soon as your order ships.</p>
+
+              <Link to="/" className="text-center" >
+              <Button variant="primary mx-auto" className="mb-4 bg-danger border-0 p-3 w-75">
+                Continue Shopping
+              </Button>
+              </Link>
           <div className="p-3 mx-4">
-          <p>Your order has been confirmed. Please proceed to payment.</p>
           </div>
       </Modal>
     </div>
