@@ -109,7 +109,7 @@ const Checkout = () => {
             </Form.Group>
             <Form.Group controlId="cardCVC" className="mt-3 mx-1 w-50">
               <Form.Label>CVV</Form.Label>
-              <Form.Control type="text" placeholder="CVv" />
+              <Form.Control type="text" placeholder="CVV" />
             </Form.Group>
             </div>
           </Form>
