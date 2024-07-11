@@ -69,10 +69,10 @@ const OrderSummaryCheckout = () => {
           <img src={order} />
           </div>
         </Modal.Body>
-        <h4 className="text-center mt-3">Your Order is confirmed!</h4>
+        <h4 className="text-center mt-3 fw-bolder">Your Order is confirmed!</h4>
           <p className="text-center">We’ll send you a shipping confirmation email as soon as your order ships.</p>
 
-              <Link to="/" className="text-center" >
+              <Link to="/" className="text-center mt-3" >
               <Button variant="primary mx-auto" className="mb-4 bg-danger border-0 p-3 w-75">
                 Continue Shopping
               </Button>
